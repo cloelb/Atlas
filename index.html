@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#211d17">
+<meta name="description" content="ATLAS — La vie est le jeu. Explore le Village des Fondations et écris la suite de ton histoire.">
+<title>ATLAS · Village des Fondations</title>
+<link rel="icon" href="./assets/atlas.svg" type="image/svg+xml">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="stylesheet" href="./styles.css">
+<script type="module" src="./src/main.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#game">Aller au Village</a>
+<div id="app" class="app">
+  <main class="game" id="game" tabindex="0" aria-label="Village des Fondations. Touchez le sol pour marcher ou utilisez les touches fléchées.">
+    <div id="camera" class="camera">
+      <div class="village-art" aria-hidden="true"></div>
+      <div class="ambient-lights" aria-hidden="true"></div>
+      <div class="game-path" aria-hidden="true"></div>
+      <div class="world-avatar" id="world-avatar" aria-label="Personnage du joueur"></div>
+      <button class="location location-house" data-place="maison" style="--xx:30%;--yy:45%"><span class="loc-icon">⌂</span><span class="loc-name">Ma maison</span></button>
+      <button class="location location-mairie" data-place="mairie" style="--xx:48%;--yy:31%"><span class="loc-icon">✦</span><span class="loc-name">Maison de la Maire</span></button>
+      <button class="location location-library" data-place="bibliotheque" style="--xx:67%;--yy:46%"><span class="loc-icon">☷</span><span class="loc-name">Bibliothèque</span></button>
+      <button class="location location-pavillon" data-place="pavillon" style="--xx:87%;--yy:29%"><span class="loc-icon">✧</span><span class="loc-name">Le Pavillon</span></button>
+    </div>
+    <div class="game-sheen" aria-hidden="true"></div>
+    <header class="top-hud">
+      <button class="brand" data-action="intro" aria-label="À propos d'ATLAS"><img src="./assets/atlas.svg" alt=""><span><b>ATLAS</b><small>LA VIE EST LE JEU</small></span></button>
+      <div class="chapter-mark"><small>CHAPITRE I</small><strong>Le Village des Fondations</strong></div>
+      <div class="header-actions"><button class="soft-icon" data-action="sound" id="sound-button" aria-label="Activer les sons" title="Sons d'ambiance">♪</button><button class="soft-icon" data-action="help" aria-label="Comment jouer" title="Comment jouer">?</button></div>
+    </header>
+    <aside class="rail" aria-label="Navigation principale">
+      <button data-action="village" class="selected"><span>⌂</span><b>Village</b></button>
+      <button data-action="map"><span>⌖</span><b>La Carte</b></button>
+      <button data-action="missions"><span>✦</span><b>Missions</b></button>
+      <button data-action="journal"><span>☷</span><b>Carnet</b></button>
+      <button data-action="maison"><span>♧</span><b>Ma maison</b></button>
+      <button data-action="studio"><span>♙</span><b>Mon personnage</b></button>
+    </aside>
+    <div class="micro-map" aria-hidden="true"><span>✧</span><small>Village<br>des Fondations</small></div>
+    <div class="game-bottom">
+      <button class="profile-pill" data-action="studio"><span class="profile-avatar" id="profile-avatar"></span><span><small>MON EXPLORATEUR</small><strong id="profile-name">Nouvelle partie</strong></span><span class="pill-arrow">›</span></button>
+      <div class="message" id="message" aria-live="polite"><span>✦</span><p>Chaque grande histoire commence quelque part. Explore le Village.</p></div>
+      <nav class="mobile-dock" aria-label="Raccourcis"><button data-action="village">⌂<small>Village</small></button><button data-action="map">⌖<small>Carte</small></button><button data-action="missions">✦<small>Missions</small></button><button data-action="journal">☷<small>Carnet</small></button><button data-action="studio">♙<small>Moi</small></button></nav>
+    </div>
+  </main>
+  <div id="modal-screen" class="modal-screen" hidden></div>
+  <section id="panel" class="panel" role="dialog" aria-modal="true" aria-label="ATLAS" aria-hidden="true" inert tabindex="-1"><button id="panel-close" class="close-panel" aria-label="Fermer et revenir au Village">×</button><div id="panel-body"></div></section>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</div>
+</body>
+</html>
